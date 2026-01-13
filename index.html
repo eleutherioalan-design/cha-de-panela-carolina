@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chá de Panela da Carolzinha</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 12px;
+    min-height: 100vh;
+    background: #fdecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+.convite {
+    background: #fff;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+h1 { font-size: 22px; margin-bottom: 8px; }
+
+p { font-size: 15px; line-height: 1.6; }
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background: #f7b6c8;
+    color: #000;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover { background: #f3a6bb; }
+
+.contador {
+    margin: 15px 0;
+    padding: 14px;
+    background: #fdecef;
+    border-radius: 18px;
+    font-weight: bold;
+}
+
+.lista {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.lista.ativa {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.categoria {
+    text-align: left;
+    margin-top: 16px;
+}
+
+.categoria h3 { font-size: 15px; }
+
+ul { padding-left: 18px; line-height: 1.6; }
+
+.pix-box {
+    display: none;
+    margin-top: 14px;
+    padding: 16px;
+    background: #fdecef;
+    border-radius: 18px;
+    border: 1px dashed #f7b6c8;
+}
+
+.pix-animado { animation: pulse 1.8s infinite; }
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(247,182,200,0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(247,182,200,0); }
+    100% { box-shadow: 0 0 0 0 rgba(247,182,200,0); }
+}
+
+.observacoes {
+    margin-top: 22px;
+    padding: 18px;
+    background: #fdecef;
+    border-radius: 18px;
+}
+
+.observacoes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.observacoes li {
+    margin: 8px 0;
+    font-size: 14px;
+}
+</style>
+
+<script>
+function toggleLista() {
+    document.getElementById("lista").classList.toggle("ativa");
+}
+
+function togglePix() {
+    const pix = document.getElementById("pix");
+    pix.style.display = pix.style.display === "block" ? "none" : "block";
+}
+
+function copiarPix() {
+    navigator.clipboard.writeText("51980617045");
+    alert("Chave Pix copiada 💕");
+}
+
+function atualizarContador() {
+    const dataEvento = new Date("2026-03-29T15:30:00").getTime();
+    const agora = new Date().getTime();
+    const diff = dataEvento - agora;
+
+    if (diff <= 0) {
+        document.getElementById("contador").innerHTML = "🎉 É hoje!";
+        return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("contador").innerHTML =
+        `⏳ Faltam ${d} dias, ${h}h ${m}m ${s}s`;
+}
+
+setInterval(atualizarContador, 1000);
+</script>
+</head>
+
+<body>
+
+<div class="convite">
+    <h1>🏠🩷 Chá de Panela da Carolzinha</h1>
+    <p>Vamos celebrar esse momento especial comigo 💕</p>
+
+    <div class="contador" id="contador"></div>
+
+    <p>📅 <strong>29 de março de 2026</strong></p>
+    <p>⏰ <strong>15:30</strong></p>
+
+    <a class="botao" href="https://maps.app.goo.gl/8tGT6W8gfCDG5ZgP7" target="_blank">
+        📍 Ver Localização
+    </a>
+
+    <a class="botao" href="https://wa.me/5551995161987?text=Confirmo%20minha%20presença%20no%20Chá%20de%20Panela%20da%20Carolzinha%20🏠🩷" target="_blank">
+        ✅ Confirmar Presença
+    </a>
+
+    <button class="botao" onclick="toggleLista()">🎁 Ver Lista de Presentes</button>
+
+    <div class="lista" id="lista">
+
+    <div class="categoria">
+        <h3>🍳 Cozinha</h3>
+        <ul>
+            <li>Capa de botijão</li>
+            <li>Faqueiro</li>
+            <li>Pipoqueira</li>
+            <li>Forma quadrada</li>
+            <li>Forma redonda</li>
+            <li>Travessa de vidro média</li>
+            <li>Travessa grande</li>
+            <li>Jogo de taças</li>
+            <li>Batedeira</li>
+            <li>Jogo de panos de prato</li>
+            <li>Panela de pressão</li>
+            <li>Torradeira</li>
+            <li>Porta-temperos</li>
+            <li>Formas para gelo</li>
+            <li>Tábua de carne</li>
+            <li>Cafeteira</li>
+            <li>Jogo de xícaras</li>
+            <li>Air fryer</li>
+            <li>Jogo de sobremesa</li>
+            <li>Fruteira</li>
+            <li>Micro-ondas</li>
+            <li>Forno</li>
+            <li>Jogo de fondue</li>
+            <li>Kit churrasco</li>
+            <li>Jogo de copos</li>
+            <li>Descanso de prato</li>
+            <li>Talheres</li>
+            <li>Bacia grande ou pequena</li>
+            <li>Escorredor de massa</li>
+            <li>Kit cuia e bomba</li>
+            <li>Porta-frios</li>
+            <li>Pratos</li>
+            <li>Paliteiro</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>🚿 Banheiro</h3>
+        <ul>
+            <li>Tapete</li>
+            <li>Toalhas de rosto</li>
+            <li>Toalhas de banho</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>🛋 Sala</h3>
+        <ul>
+            <li>Cortina</li>
+            <li>Almofadas</li>
+            <li>Quadros decorativos</li>
+            <li>Puff</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>🛏 Quarto</h3>
+        <ul>
+            <li>Lençol para cama de casal</li>
+            <li>Fronha de travesseiro</li>
+            <li>Edredom</li>
+            <li>Cortina</li>
+            <li>Abajur</li>
+            <li>Cabides</li>
+        </ul>
+    </div>
+
+</div>
+
+
+    <button class="botao pix-animado" onclick="togglePix()">💗 Presentear em Dinheiro (Pix)</button>
+
+    <div class="pix-box" id="pix">
+        <p><strong>🔑 Pix:</strong> 51980617045</p>
+        <button class="botao" onclick="copiarPix()">📋 Copiar Pix</button>
+    </div>
+
+    <div class="observacoes">
+        <h3>📌 Observações</h3>
+        <ul>
+            <li>Confirme sua presença</li>
+            <li>Vai ter bebida alcoólica 🍷</li>
+            <li>Não vir acompanhada</li>
+            <li>Curte e celebre muito esse momento comigo 🩷</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
+
